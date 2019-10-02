@@ -445,7 +445,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: calc(100% - 252px);
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -457,7 +457,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: calc(100% - 252px);
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -474,7 +474,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: calc(100% - 252px);
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1742,6 +1742,16 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  transition: 1.4s all;
+}
+.site-author-image:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -transform: rotate(360deg);
 }
 .site-author-name {
   margin: 0;
@@ -1823,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffb62;
+  background: #99b14d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2607,7 +2617,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(255,255,255,0.7);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: initial;
 }
@@ -2665,8 +2675,8 @@ pre .javascript .function {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 252px);
-  background: #fff;
+  width: 700px;
+  background: rgba(255,255,255,0.2);
   min-height: 700px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: initial;
@@ -2710,6 +2720,7 @@ pre .javascript .function {
 .footer-inner {
   width: 75%;
   padding-left: 260px;
+  background: rgba(255,255,255,0.7);
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-inner {
@@ -2727,9 +2738,11 @@ pre .javascript .function {
 }
 .sidebar-position-right .header-inner {
   right: 0;
+  background: rgba(255,255,255,0.7);
 }
 .sidebar-position-right .content-wrap {
   float: left;
+  background: rgba(255,255,255,0.7);
 }
 .sidebar-position-right .sidebar {
   float: right;
