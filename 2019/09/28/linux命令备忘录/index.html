@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限">
+<meta name="description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限 修改镜像源 /etc/apt/sources.list  镜像源文件位置 sudo apt-get update    更新软件源 sudo apt-get dist-upgrade  更新系统所有软件 MySql密码修改获取原始密码 sudo ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux命令备忘录">
 <meta property="og:url" content="http://yoursite.com/2019/09/28/linux命令备忘录/index.html">
-<meta property="og:site_name" content="Jerry&#39;s Blog">
-<meta property="og:description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限">
+<meta property="og:site_name" content="taoyi&#39;s Blog">
+<meta property="og:description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限 修改镜像源 /etc/apt/sources.list  镜像源文件位置 sudo apt-get update    更新软件源 sudo apt-get dist-upgrade  更新系统所有软件 MySql密码修改获取原始密码 sudo ca">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-28T01:14:55.747Z">
+<meta property="og:updated_time" content="2020-02-18T08:35:56.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令备忘录">
-<meta name="twitter:description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限">
+<meta name="twitter:description" content="系统APP目录 /usr/share/applications/ 修改文件权限命令 chmod  chmod 776 h.txt   //添加写权限 修改镜像源 /etc/apt/sources.list  镜像源文件位置 sudo apt-get update    更新软件源 sudo apt-get dist-upgrade  更新系统所有软件 MySql密码修改获取原始密码 sudo ca">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>linux命令备忘录 | Jerry's Blog</title>
+  <title>linux命令备忘录 | taoyi's Blog</title>
   
 
 
@@ -162,7 +162,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jerry's Blog</span>
+        <span class="site-title">taoyi's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -252,13 +252,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/linux命令备忘录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry">
+      <meta itemprop="name" content="taoyi">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/th.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jerry's Blog">
+      <meta itemprop="name" content="taoyi's Blog">
     </span>
 
     
@@ -310,7 +310,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  26
+                  147
                 </span>
               
 
@@ -353,6 +353,24 @@
 <pre><code>chmod</code></pre></blockquote>
 <blockquote>
 <pre><code>chmod 776 h.txt   //添加写权限</code></pre></blockquote>
+<h2 id="修改镜像源"><a href="#修改镜像源" class="headerlink" title="修改镜像源"></a>修改镜像源</h2><blockquote>
+<pre><code>/etc/apt/sources.list  镜像源文件位置
+sudo apt-get update    更新软件源
+sudo apt-get dist-upgrade  更新系统所有软件</code></pre></blockquote>
+<h2 id="MySql密码修改"><a href="#MySql密码修改" class="headerlink" title="MySql密码修改"></a>MySql密码修改</h2><h4 id="获取原始密码"><a href="#获取原始密码" class="headerlink" title="获取原始密码"></a>获取原始密码</h4><blockquote>
+<pre><code>sudo cat /etc/mysql/debian.cnf</code></pre></blockquote>
+<h4 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h4><blockquote>
+<pre><code>mysql -u debian-sys-maint -p</code></pre></blockquote>
+<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><blockquote>
+<pre><code>use mysql;
+// 下面这句命令有点长，请注意。
+update mysql.user set authentication_string=password(&apos;root&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;
+update user set plugin=&quot;mysql_native_password&quot;; 
+flush privileges;
+quit;</code></pre></blockquote>
+<h4 id="重启MySql"><a href="#重启MySql" class="headerlink" title="重启MySql"></a>重启MySql</h4><blockquote>
+<pre><code>sudo service mysql restart
+mysql -u root -p</code></pre></blockquote>
 
       
     </div>
@@ -455,9 +473,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/th.jpeg" alt="Jerry">
+              <img class="site-author-image" itemprop="image" src="/images/th.jpeg" alt="taoyi">
             
-              <p class="site-author-name" itemprop="name">Jerry</p>
+              <p class="site-author-name" itemprop="name">taoyi</p>
               <p class="site-description motion-element" itemprop="description">我本微末凡尘，却也心向天空</p>
           </div>
 
@@ -468,7 +486,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -521,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统APP目录"><span class="nav-number">1.</span> <span class="nav-text">系统APP目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文件权限命令"><span class="nav-number">2.</span> <span class="nav-text">修改文件权限命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统APP目录"><span class="nav-number">1.</span> <span class="nav-text">系统APP目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文件权限命令"><span class="nav-number">2.</span> <span class="nav-text">修改文件权限命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改镜像源"><span class="nav-number">3.</span> <span class="nav-text">修改镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySql密码修改"><span class="nav-number">4.</span> <span class="nav-text">MySql密码修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取原始密码"><span class="nav-number">4.0.1.</span> <span class="nav-text">获取原始密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登陆"><span class="nav-number">4.0.2.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改密码"><span class="nav-number">4.0.3.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启MySql"><span class="nav-number">4.0.4.</span> <span class="nav-text">重启MySql</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -541,11 +559,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Jerry</span>
+  <span class="author" itemprop="copyrightHolder">taoyi</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -555,7 +573,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1k</span>
+    <span title="Site words total count">1.4k</span>
   
 </div>
 
